@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark position-fixed w-100 ">
+  <div class="container">
+    <a class="navbar-brand text-white fw-bold" routerLink=""><i class="far fa-sticky-note me-2 "></i>Notes</a>
+    <button (click)="Toggle()" class="navbar-toggler border-0 " type="button">
+      <span><i class="fas fa-bars"></i></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end " id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a (click)="Ancor()"  *ngIf="!isLogin" class="nav-link first m-2 text-center" aria-current="page" routerLink="signin">SignIn</a>
+        </li>
+
+        <li class="nav-item">
+          <a (click)="Ancor()" *ngIf="!isLogin" class="nav-link  m-2 text-center" aria-current="page" routerLink="signup">SignUp</a>
+        </li>
+
+        <li class="nav-item">
+          <a (click)="logOut();Ancor()" *ngIf="isLogin" class="nav-link text-center" aria-current="page" routerLink="">Logout</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>

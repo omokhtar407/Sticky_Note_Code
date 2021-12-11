@@ -1,0 +1,24 @@
+.navbar{
+  z-index: 1000;
+}
+.navbar-dark .navbar-toggler {
+  color: #fff !important;
+  border-color: transparent !important;
+}
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+.nav-link{
+  color:#fff !important;
+  background-color: #ffc107 !important;
+  padding: 0.2rem 1rem !important;
+  font-weight: bold;
+  border: 1px solid #ffc107;
+}
+.first{
+  background-color: transparent !important;
+  transition:  background-color 0.3s;
+}
+.first:hover{
+  background-color: #ffc107 !important;
+}

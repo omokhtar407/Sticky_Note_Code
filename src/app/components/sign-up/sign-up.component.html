@@ -1,0 +1,63 @@
+<section id="signUp" class="bg-warning vh-100">
+  <div class="inner vh-100">
+    <div class="form w-100 position-absolute  start-50 translate-middle">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6">
+            <div class="signup_form py-4 px-3">
+              <h1 class="h2 text-center text-white fw-bold mb-3 text-uppercase">Sticky Note</h1>
+              <form [formGroup]='SignUp' (ngSubmit)='signupFormData(SignUp)'>
+
+                <div class="group mb-4">
+                  <input formControlName='first_name' class="form-control mb-2 rounded-0" type="text" name="first_name" id="first_name" placeholder="FirstName">
+                  <div *ngIf="SignUp.get('first_name')?.errors != null  && SignUp.get('first_name')?.touched" class="alert alert-danger mb-2 fw-bold p-1 rounded-0">
+                    <p *ngIf="SignUp.get('first_name')?.errors?.required" class="mb-0">Firstname is required</p>
+                    <p *ngIf="SignUp.get('first_name')?.errors?.minlength" class="mb-0">Firstname minLegnth is 3</p>
+                    <p *ngIf="SignUp.get('first_name')?.errors?.maxlength" class="mb-0">Firstname maxLegnth is 8</p>
+                  </div>
+                </div>
+
+                <div class="group mb-4">
+                  <input formControlName='last_name' class="form-control mb-2 rounded-0" type="text" name="last_name" id="last_name" placeholder="LastName">
+                  <div *ngIf="SignUp.get('last_name')?.errors != null && SignUp.get('last_name')?.touched" class="alert alert-danger mb-2 fw-bold p-1 rounded-0">
+                    <p *ngIf="SignUp.get('last_name')?.errors?.required" class="mb-0">LastName is required</p>
+                    <p *ngIf="SignUp.get('last_name')?.errors?.minlength" class="mb-0">LastName minLegnth is 3</p>
+                    <p *ngIf="SignUp.get('last_name')?.errors?.maxlength" class="mb-0">LastName maxLegnth is 8</p>
+                  </div>
+                </div>
+
+                <div class="group mb-4">
+                  <input  formControlName='age' class="form-control mb-2 rounded-0" type="number" name="age" id="age" placeholder="Age">
+                  <div *ngIf="SignUp.get('age')?.errors != null && SignUp.get('age')?.touched" class="alert alert-danger mb-2 fw-bold p-1 rounded-0">
+                    <p *ngIf="SignUp.get('age')?.errors?.required" class="mb-0">Age is required</p>
+                    <p *ngIf="SignUp.get('age')?.errors?.min" class="mb-0">Age min is 18</p>
+                    <p *ngIf="SignUp.get('age')?.errors?.max" class="mb-0">Age max is 80</p>
+                  </div>
+                </div>
+
+                <div class="group mb-4">
+                  <input  formControlName='email' class="form-control mb-2 rounded-0" type="email" name="email" id="email" placeholder="Email">
+                  <div *ngIf="SignUp.get('email')?.errors != null && SignUp.get('email')?.touched" class="alert alert-danger mb-2 fw-bold p-1 rounded-0">
+                    <p *ngIf="SignUp.get('email')?.errors?.required" class="mb-0">Email is required</p>
+                    <p *ngIf="SignUp.get('email')?.errors?.pattern" class="mb-0">Email is invalid</p>
+                  </div>
+                </div>
+
+                <div class="group mb-4">
+                  <input  formControlName='password' class="form-control mb-2 rounded-0" type="password" name="password" id="password" placeholder="Password">
+                  <div *ngIf="SignUp.get('password')?.errors != null && SignUp.get('password')?.touched" class="alert alert-danger mb-2 fw-bold p-1 rounded-0">
+                    <p *ngIf="SignUp.get('password')?.errors?.required" class="mb-0">Password is required</p>
+                    <p *ngIf="SignUp.get('password')?.errors?.pattern" class="mb-0">Password must contain (6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter)</p>
+                  </div>
+                </div>
+
+                <button [disabled]="SignUp.invalid" type="submit" class="btn rounded-0 text-white fw-bold bg-dark w-100" ><span *ngIf="!isClicked">Sign Up</span><span *ngIf="isClicked">Waiting....</span></button>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</section>

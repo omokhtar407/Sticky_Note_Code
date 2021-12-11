@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+  position: relative;
+  overflow-x: hidden;
+  background-color: #282e33;
+}
+i{
+  cursor: pointer;
+}
+.form-control{
+  border-radius: 0 !important;
+}
+.form-control::placeholder{
+
+  color: rgb(179, 173, 173) !important;
+}
